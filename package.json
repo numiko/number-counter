@@ -1,0 +1,42 @@
+{
+  "name": "@numiko/number-counter",
+  "description": "Number Counter",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:numiko/package-boilerplate.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "test:ci": "vitest --run --reporter junit --outputFile ./reports/results.xml --coverage.enabled --coverage.include lib --coverage.reporter=html --coverage.reportsDirectory ./reports/"
+  },
+  "main": "./dist/NumberCounter.umd.js",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/NumberCounter.es.js",
+      "require": "./dist/NumberCounter.umd.js"
+    }
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^1.6.0",
+    "eslint": "^8.56.0",
+    "happy-dom": "^7.8.1",
+    "vite": "^5.2.12",
+    "vite-plugin-eslint": "^1.8.1",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5"
+  }
+}
