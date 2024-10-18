@@ -16,5 +16,18 @@ export default defineConfig({
       name: 'NumberCounter',
       fileName: (format) => `NumberCounter.${format}.js`
     },
+    rollupOptions: {
+      // input: path.resolve(__dirname, 'index.html'),
+      // make sure to externalize deps that shouldn't be bundled
+      // into your library
+      external: ['gsap'],
+      output: {
+        // Provide global variables to use in the UMD build
+        // for externalized deps
+        globals: {
+          gsap: 'gsap',
+        },
+      },
+    },
   }
 });
