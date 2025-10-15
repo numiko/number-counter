@@ -10,4 +10,5 @@
 
 ## Type Aliases
 
+- [NumberCounterElementsParam](type-aliases/NumberCounterElementsParam.md)
 - [NumberCounterOptions](type-aliases/NumberCounterOptions.md)
