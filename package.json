@@ -6,7 +6,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org:numiko/package-boilerplate.git"
+    "url": "git+ssh://git@bitbucket.org:numiko/number-counter.git"
   },
   "scripts": {
     "dev": "vite",
