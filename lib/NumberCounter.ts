@@ -37,7 +37,7 @@ class NumberCounter {
    * @param {String|HTMLElement|NodeList} elements
    * @param {Object} options
    */
-  constructor(elements: NumberCounterElementsParam, options?: Partial<NumberCounterOptions>) {
+  constructor(elements: NumberCounterElementsParam, options?: NumberCounterOptions) {
     this.options = { ...this.DEFAULT_OPTIONS, ...options };
     this.numberItemsEl = this.resolveElements(elements);
     this.intersectionOptions = this.options.intersectionOptions;
