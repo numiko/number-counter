@@ -8,7 +8,6 @@ async function delay(ms) {
 }
 
 const IntersectionObserverMock = vi.fn((callback) => {
-
   const unobserve = vi.fn();
 
   // Simulate observing and immediately call the callback with the target element
@@ -38,6 +37,7 @@ global.document = document;
 
 // Make sure the document is in a clear state before each test.
 beforeEach(() => {
+  // Mock `matchMedia` to return `false` by default; this can be overridden on a per-test basis.
   window.matchMedia = vi.fn().mockImplementation(() => ({ matches: false }));
 
   document.body.innerHTML = '';
@@ -47,16 +47,10 @@ afterEach(()=> {
   vi.restoreAllMocks();
 });
 
-describe('Tests for our packages', () => {
-  it('should work', () => {
-    expect(1).toBe(1);
-  });
-});
-
 /**
-     * The HTML used to assert our tests against.
-     * @type {string}
-     */
+ * The HTML used to assert our tests against.
+ * @type {string}
+ */
 const basicTestMarkup = '<div data-js-number-counter="">123456</div>';
 
 describe('Number counter initialisation', () => {
