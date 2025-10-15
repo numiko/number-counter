@@ -5,7 +5,7 @@ type NumberCounterOptions = {
   intersectionOptions?: IntersectionObserverInit;
   duration?: number;
   startValue?: number;
-}
+};
 
 type RequiredNumberCounterOptions = Required<NumberCounterOptions>;
 
@@ -95,7 +95,7 @@ class NumberCounter {
     const parts = Number(value).toFixed(decimalPlaces).split('.');
 
     // Add the `thousandsSeparator` at every full thousand value
-    if(parts[0]) {
+    if (parts[0]) {
       parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSeparator);
     }
 

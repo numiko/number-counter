@@ -22,6 +22,11 @@ export default [
     plugins: {
       '@stylistic': stylistic,
     },
+    // Let `eslint` know about the `tsconfig.json` file so it
+    // can use the correct parser, and types.
+    parserOptions: {
+      project: './tsconfig.json',
+    },
     rules: {
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'no-undef': 'warn',
