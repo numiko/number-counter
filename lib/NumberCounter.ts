@@ -173,4 +173,8 @@ class NumberCounter {
   }
 }
 
-export { NumberCounter, type NumberCounterOptions };
+export {
+  NumberCounter,
+  type NumberCounterOptions,
+  type NumberCounterElementsParam
+};
