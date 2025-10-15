@@ -1,36 +1,20 @@
-# Number Counter (name pending)
+# Number Counter
 
-Animated number counter for use on statistics components.
+A package to animate numbers — most predominantly used on our statistics slice.
 
 ## Features
 
-Finds numbers within strings of text and formats them so they can be animated when scrolled into view. Configurable to set a duration and initial value to enable counting up and down
+Automatically detects and animates numbers in text when they scroll into view. Customizable duration and starting values for smooth counting animations.
 
 ## Installation
 
-Instructions on how to install the package. Where possible specify a tag to use. If the
-package has reached version 1, installing by the semver method is recommended.
-
-`npm install ssh://git@bitbucket.org:numiko/number-counter.git#<TAG_NAME>`
+The package can be installed using the semantic version.
 
 `npm install ssh://git@bitbucket.org:numiko/number-counter.git##semver:<VERSION>`
 
 ## Usage
 
-An example of how to use the package. This may include both JavaScript and HTML.
-
-## API
-
-The API section should outline any configurable options or methods available from the package.
-
-### Options
-
-| Option | Description | Type | Default
-| --- | --- | --- | --- |
-| `option` | Description | `object`| `object`
-
-### Methods
-
-| Method | Description | Return value
-| --- | --- | --- |
-| `method` | Description | `void`
+```js
+const numberCounterItems = document.querySelectorAll('[data-js-number-counter]');
+new NumberCounter(numberCounterItems);
+```
