@@ -38,6 +38,8 @@ global.document = document;
 
 // Make sure the document is in a clear state before each test.
 beforeEach(() => {
+  window.matchMedia = vi.fn().mockImplementation(() => ({ matches: false }));
+
   document.body.innerHTML = '';
 });
 
@@ -55,13 +57,21 @@ describe('Tests for our packages', () => {
      * The HTML used to assert our tests against.
      * @type {string}
      */
-const basicTestMarkup = `
-  <div data-js-number-counter>
-    123456
-  </div>
-`;
+const basicTestMarkup = '<div data-js-number-counter="">123456</div>';
 
 describe('Number counter initialisation', () => {
+  it('should not initialise when prefers reduced motion is set to reduce', () => {
+    window.matchMedia = vi.fn().mockImplementation(() => ({ matches: true }));
+
+    document.body.innerHTML = basicTestMarkup;
+
+    new NumberCounter('[data-js-number-counter]');
+
+    const counter = document.querySelector('[data-js-number-counter]');
+
+    expect(counter.outerHTML).toBe(basicTestMarkup);
+  });
+
   it('should work when passed a string as a selector to initialise', () => {
     document.body.innerHTML = basicTestMarkup;
 
