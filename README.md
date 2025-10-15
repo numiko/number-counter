@@ -2,9 +2,6 @@
 
 A package to animate numbers — most predominantly used on our statistics slice.
 
-## API
-
-See [API documentation](./docs/README.md) for more detail.
 
 ## Features
 
@@ -22,3 +19,7 @@ The package can be installed using the semantic version.
 const numberCounterItems = document.querySelectorAll('[data-js-number-counter]');
 new NumberCounter(numberCounterItems);
 ```
+
+## API
+
+See [API documentation](./docs/README.md) for more detail.
