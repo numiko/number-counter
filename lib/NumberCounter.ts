@@ -8,6 +8,7 @@ type NumberCounterOptions = {
 }
 
 type NumberCounterElementsParam = string | HTMLElement | NodeListOf<HTMLElement> | Array<HTMLElement>;
+
 class NumberCounter {
   // Match number containing `.` and `,` characters
   integerAndDecimalRegex = /\b\d[\d,.]*\b/g;
