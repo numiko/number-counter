@@ -20,9 +20,6 @@ export default [
       },
       // Let `eslint` know about the `tsconfig.json` file so it
       // can use the correct parser, and types.
-      parserOptions: {
-        project: './tsconfig.json',
-      },
     },
     plugins: {
       '@stylistic': stylistic,
