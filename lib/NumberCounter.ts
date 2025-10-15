@@ -1,11 +1,13 @@
 import { gsap } from 'gsap';
 
 type NumberCounterOptions = {
-  runOnce: boolean;
-  intersectionOptions: IntersectionObserverInit;
-  duration: number;
-  startValue: number;
+  runOnce?: boolean;
+  intersectionOptions?: IntersectionObserverInit;
+  duration?: number;
+  startValue?: number;
 }
+
+type RequiredNumberCounterOptions = Required<NumberCounterOptions>;
 
 type NumberCounterElementsParam = string | HTMLElement | NodeListOf<HTMLElement> | Array<HTMLElement>;
 
@@ -17,7 +19,7 @@ class NumberCounter {
 
   NUMBER_WRAPPER_ATTRIBUTE = 'data-js-animate-number';
 
-  DEFAULT_OPTIONS: NumberCounterOptions = {
+  DEFAULT_OPTIONS: RequiredNumberCounterOptions = {
     runOnce: true,
     intersectionOptions: {
       rootMargin: '5% 0% 5% 0%',
@@ -27,7 +29,7 @@ class NumberCounter {
     startValue: 0
   };
 
-  options: NumberCounterOptions;
+  options: RequiredNumberCounterOptions;
   numberItemsEl: NodeListOf<HTMLElement> | HTMLElement[];
   intersectionOptions: IntersectionObserverInit;
 
@@ -171,4 +173,4 @@ class NumberCounter {
   }
 }
 
-export { NumberCounter };
+export { NumberCounter, type NumberCounterOptions };
