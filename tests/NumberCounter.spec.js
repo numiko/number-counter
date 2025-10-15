@@ -1,6 +1,6 @@
 import { Window } from 'happy-dom';
 import { expect, describe, it, vi, beforeEach, afterEach } from 'vitest';
-import { NumberCounter } from '../lib/NumberCounter.js';
+import { NumberCounter } from '../lib/NumberCounter.ts';
 
 // Utility to create a small delay
 async function delay(ms) {
