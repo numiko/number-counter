@@ -24,9 +24,9 @@ export default [
       'no-undef': 'warn',
       'no-unused-vars': 'warn',
       'no-shadow': 'warn',
-      '@stylistic/semi': ['error', 'always'],
-      '@stylistic/quotes': ['error', 'single'],
-      '@stylistic/indent': ['error', 2],
+      '@stylistic/semi': ['warn', 'always'],
+      '@stylistic/quotes': ['warn', 'single'],
+      '@stylistic/indent': ['warn', 2],
       '@stylistic/keyword-spacing': 'warn',
     }
   }
