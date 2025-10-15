@@ -1,5 +1,13 @@
 import { gsap } from 'gsap';
 
+type NumberCounterOptions = {
+  runOnce: boolean;
+  intersectionOptions: IntersectionObserverInit;
+  duration: number;
+  startValue: number;
+}
+
+type NumberCounterElementsParam = string | HTMLElement | NodeListOf<HTMLElement> | Array<HTMLElement>;
 class NumberCounter {
   // Match number containing `.` and `,` characters
   integerAndDecimalRegex = /\b\d[\d,.]*\b/g;
@@ -8,40 +16,35 @@ class NumberCounter {
 
   NUMBER_WRAPPER_ATTRIBUTE = 'data-js-animate-number';
 
-  DEFAULT_OPTIONS = {
+  DEFAULT_OPTIONS: NumberCounterOptions = {
     runOnce: true,
-    /**
-     * Configuration used for the number observer.
-     * @type {Object}
-     */
     intersectionOptions: {
+      rootMargin: '5% 0% 5% 0%',
       threshold: 0.25,
-      rootMargin: '5% 0% 5% 0%'
     },
     duration: 2,
-    startValue: 0,
+    startValue: 0
   };
+
+  options: NumberCounterOptions;
+  numberItemsEl: NodeListOf<HTMLElement> | HTMLElement[];
+  intersectionOptions: IntersectionObserverInit;
 
   /**
    * @param {String|HTMLElement|NodeList} elements
    * @param {Object} options
    */
-  constructor(elements, options) {
+  constructor(elements: NumberCounterElementsParam, options?: Partial<NumberCounterOptions>) {
     this.options = { ...this.DEFAULT_OPTIONS, ...options };
     this.numberItemsEl = this.resolveElements(elements);
     this.intersectionOptions = this.options.intersectionOptions;
+
     this.init();
   }
 
-  /**
-   * Convert elements property to Array or NodeList so it's iterable
-   *
-   * @param {String|HTMLElement|NodeList|Array} elements
-   * @returns {Array|NodeList}
-   */
-  resolveElements(elements) {
+  resolveElements(elements: NumberCounterElementsParam) {
     if (typeof elements === 'string') {
-      return document.querySelectorAll(elements);
+      return document.querySelectorAll<HTMLElement>(elements);
     }
 
     if (elements instanceof HTMLElement) {
@@ -56,11 +59,10 @@ class NumberCounter {
   }
 
   /**
-   *
-   * @param {String} value
-   * @returns {String}
+   * Wraps the numbers in the string with a span element.
+   * It does not wrap numbers that are within HTML tags.
    */
-  wrapNumbers(value) {
+  wrapNumbers(value: string) {
     // Split by HTML tags to work only with content between tags
     const parts = value.split(/(<[^ >][^>]*>)/g);
 
@@ -77,41 +79,30 @@ class NumberCounter {
     return wrappedValue;
   }
 
-
-  /**
-   *
-   * @param {Number} value
-   * @returns {Number}
-   */
-  countDecimalPlaces(value) {
+  countDecimalPlaces(value: string) {
     return value.toString().split('.')[1]?.length || 0;
   }
 
   /**
-   *
-   * @param {(Number|String)} value
-   * @param {Number} decimalPlaces
-   * @param {Boolean} hasCommaSeparators
-   * @returns {String}
+   * Formats a number with the specified decimal places and optional comma separators.
    */
-  formatNumber(value, decimalPlaces, hasCommaSeparators) {
+  formatNumber(value: number | string, decimalPlaces: number, hasCommaSeparators: boolean) {
     const decimalPoint = '.';
     const thousandsSeparator = hasCommaSeparators ? ',' : '';
     const parts = Number(value).toFixed(decimalPlaces).split('.');
 
     // Add the `thousandsSeparator` at every full thousand value
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSeparator);
+    if(parts[0]) {
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSeparator);
+    }
 
     return parts.join(decimalPoint);
   }
 
   /**
-   *
-   * @param {HTMLElement} numberElement
-   * @param {Number} startValue
-   * @param {Number} duration
+   * Creates a GSAP tween for the number element.
    */
-  createNumberTween(numberElement, startValue = this.options.startValue, duration = this.options.duration) {
+  createNumberTween(numberElement: HTMLElement, startValue = this.options.startValue, duration = this.options.duration) {
     const numberToIncrement = {
       val: numberElement.innerText.replaceAll(',', '')
     };
@@ -133,12 +124,7 @@ class NumberCounter {
     });
   }
 
-  /**
-   * @type {IntersectionObserverCallback}
-   * @param {IntersectionObserverEntry} entries
-   * @param {IntersectionObserver} observer
-   */
-  onNumberIntersecting(entries, observer) {
+  onNumberIntersecting(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
     entries.forEach((entry) => {
 
       if (!entry.isIntersecting) return;
@@ -147,7 +133,7 @@ class NumberCounter {
 
       const numberValue = element;
 
-      let startValue = parseFloat(numberValue.getAttribute('data-js-number-counter-start-value') || this.options.startValue);
+      let startValue = parseFloat(numberValue.getAttribute('data-js-number-counter-start-value') || String(this.options.startValue));
 
       if (isNaN(startValue)) {
         startValue = 0;
@@ -157,7 +143,7 @@ class NumberCounter {
 
       numberValue.innerHTML = wrappedValuesHTML;
 
-      const numberElements = numberValue.querySelectorAll(`[${this.NUMBER_WRAPPER_ATTRIBUTE}]`);
+      const numberElements = numberValue.querySelectorAll<HTMLElement>(`[${this.NUMBER_WRAPPER_ATTRIBUTE}]`);
 
       numberElements.forEach((numberElement) => {
         this.createNumberTween(numberElement, startValue);
