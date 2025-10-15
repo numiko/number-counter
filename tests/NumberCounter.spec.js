@@ -61,7 +61,6 @@ const basicTestMarkup = `
   </div>
 `;
 
-
 describe('Number counter initialisation', () => {
   it('should work when passed a string as a selector to initialise', () => {
     document.body.innerHTML = basicTestMarkup;
@@ -126,7 +125,6 @@ describe('Number counter initialisation', () => {
     document.body.innerHTML = '<div data-js-number-counter>This is a string of text without numbers to animate</div>';
 
     const counter = document.querySelector('[data-js-number-counter]');
-
     new NumberCounter(counter);
 
     const numberAnimateWrapper = counter.querySelectorAll('span[data-js-animate-number]');
@@ -154,16 +152,24 @@ describe('Number counter initialisation', () => {
     new NumberCounter(counter);
 
     expect(document.body.innerHTML).toBe('<div class="rotate-90" data-my-attribute="12345" data-js-number-counter=""><span data-js-animate-number="">12345</span></div>');
-
   });
-
-
 });
 
 describe('Number counter formatting', () => {
-
   it('should fix broken number formatting', async () => {
     document.body.innerHTML = '<div data-js-number-counter>1,23456</div>';
+
+    new NumberCounter('[data-js-number-counter]');
+
+    const counter = document.querySelector('[data-js-number-counter]');
+    // Animation takes 2 seconds to complete
+    await delay(2000);
+
+    expect(counter.innerText).toBe('123,456');
+  });
+
+  it('should wrap numbers with element to animate', async () => {
+    document.body.innerHTML = '<div data-js-number-counter>10</div>';
 
     new NumberCounter('[data-js-number-counter]');
 
@@ -172,14 +178,19 @@ describe('Number counter formatting', () => {
     // Animation takes 2 seconds to complete
     await delay(2000);
 
-    expect(counter.innerText).toBe('123,456');
+    expect(counter.innerHTML).toBe('<span data-js-animate-number="">10</span>');
+  });
+
+  it('should ignore numbers that are part of an HTML element, for example, a class name', async () => {
+    document.body.innerHTML = '<div data-js-number-counter><p class="mb-10">Some text</p>10</div>';
+
+    new NumberCounter('[data-js-number-counter]');
+
+    const counter = document.querySelector('[data-js-number-counter]');
+
+    // Animation takes 2 seconds to complete
+    await delay(2000);
+
+    expect(counter.innerHTML).toBe('<p class="mb-10">Some text</p><span data-js-animate-number="">10</span>');
   });
 });
-
-// it('should wrap numbers with element to animate', () => {
-
-// });
-
-// it('should ignore numbers that are part of an HTML element', () => {
-
-// });
