@@ -2,23 +2,12 @@
 
 ***
 
-# Number Counter
+# @numiko/number-counter
 
-A package to animate numbers — most predominantly used on our statistics slice.
+## Classes
 
-## Features
+- [NumberCounter](classes/NumberCounter.md)
 
-Automatically detects and animates numbers in text when they scroll into view. Customizable duration and starting values for smooth counting animations.
+## Type Aliases
 
-## Installation
-
-The package can be installed using the semantic version.
-
-`npm install ssh://git@bitbucket.org:numiko/number-counter.git##semver:<VERSION>`
-
-## Usage
-
-```js
-const numberCounterItems = document.querySelectorAll('[data-js-number-counter]');
-new NumberCounter(numberCounterItems);
-```
+- [NumberCounterOptions](type-aliases/NumberCounterOptions.md)

@@ -15,7 +15,7 @@
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "test:ci": "vitest --run --reporter junit --outputFile ./reports/results.xml --coverage.enabled --coverage.include lib --coverage.reporter=html --coverage.reportsDirectory ./reports/",
-    "generate-docs": "typedoc lib/NumberCounter.ts --plugin typedoc-plugin-markdown",
+    "generate-docs": "typedoc lib/NumberCounter.ts --plugin typedoc-plugin-markdown --mergeReadme true --readme none",
     "release": "release-it"
   },
   "main": "./dist/NumberCounter.umd.js",

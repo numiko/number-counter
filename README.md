@@ -2,6 +2,10 @@
 
 A package to animate numbers — most predominantly used on our statistics slice.
 
+## API
+
+See [API documentation](./docs/README.md) for more detail.
+
 ## Features
 
 Automatically detects and animates numbers in text when they scroll into view. Customizable duration and starting values for smooth counting animations.
