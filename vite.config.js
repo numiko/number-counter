@@ -17,7 +17,6 @@ export default defineConfig({
       fileName: (format) => `NumberCounter.${format}.js`
     },
     rollupOptions: {
-      // input: path.resolve(__dirname, 'index.html'),
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: ['gsap'],
