@@ -1,5 +1,5 @@
 {
-  "include": ["./src/**/*", "./lib/**/*"],
+  "include": ["./src/**/*", "./lib/**/*", "./tests/**/*"],
   "compilerOptions": {
     "target": "ES2021",
     "lib": ["ES2021", "DOM"],
