@@ -80,7 +80,7 @@ class NumberCounter {
   }
 
   countDecimalPlaces(value: string) {
-    return value.toString().split('.')[1]?.length || 0;
+    return value.split('.')[1]?.length || 0;
   }
 
   /**
