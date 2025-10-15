@@ -13,13 +13,13 @@ type NumberCounterElementsParam = string | HTMLElement | NodeListOf<HTMLElement>
 
 class NumberCounter {
   // Match number containing `.` and `,` characters
-  integerAndDecimalRegex = /\b\d[\d,.]*\b/g;
+  private integerAndDecimalRegex = /\b\d[\d,.]*\b/g;
 
-  prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  private prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  NUMBER_WRAPPER_ATTRIBUTE = 'data-js-animate-number';
+  private NUMBER_WRAPPER_ATTRIBUTE = 'data-js-animate-number';
 
-  DEFAULT_OPTIONS: RequiredNumberCounterOptions = {
+  private DEFAULT_OPTIONS: RequiredNumberCounterOptions = {
     runOnce: true,
     intersectionOptions: {
       rootMargin: '5% 0% 5% 0%',
@@ -29,9 +29,9 @@ class NumberCounter {
     startValue: 0
   };
 
-  options: RequiredNumberCounterOptions;
-  numberItemsEl: NodeListOf<HTMLElement> | HTMLElement[];
-  intersectionOptions: IntersectionObserverInit;
+  private options: RequiredNumberCounterOptions;
+  private numberItemsEl: NodeListOf<HTMLElement> | HTMLElement[];
+  private intersectionOptions: IntersectionObserverInit;
 
   /**
    * @param {String|HTMLElement|NodeList} elements
@@ -45,7 +45,7 @@ class NumberCounter {
     this.init();
   }
 
-  resolveElements(elements: NumberCounterElementsParam) {
+  private resolveElements(elements: NumberCounterElementsParam) {
     if (typeof elements === 'string') {
       return document.querySelectorAll<HTMLElement>(elements);
     }
@@ -65,7 +65,7 @@ class NumberCounter {
    * Wraps the numbers in the string with a span element.
    * It does not wrap numbers that are within HTML tags.
    */
-  wrapNumbers(value: string) {
+  private wrapNumbers(value: string) {
     // Split by HTML tags to work only with content between tags
     const parts = value.split(/(<[^ >][^>]*>)/g);
 
@@ -82,14 +82,14 @@ class NumberCounter {
     return wrappedValue;
   }
 
-  countDecimalPlaces(value: string) {
+  private countDecimalPlaces(value: string) {
     return value.split('.')[1]?.length || 0;
   }
 
   /**
    * Formats a number with the specified decimal places and optional comma separators.
    */
-  formatNumber(value: number | string, decimalPlaces: number, hasCommaSeparators: boolean) {
+  private formatNumber(value: number | string, decimalPlaces: number, hasCommaSeparators: boolean) {
     const decimalPoint = '.';
     const thousandsSeparator = hasCommaSeparators ? ',' : '';
     const parts = Number(value).toFixed(decimalPlaces).split('.');
@@ -105,7 +105,7 @@ class NumberCounter {
   /**
    * Creates a GSAP tween for the number element.
    */
-  createNumberTween(numberElement: HTMLElement, startValue = this.options.startValue, duration = this.options.duration) {
+  private createNumberTween(numberElement: HTMLElement, startValue = this.options.startValue, duration = this.options.duration) {
     const numberToIncrement = {
       val: numberElement.innerText.replaceAll(',', '')
     };
@@ -127,7 +127,7 @@ class NumberCounter {
     });
   }
 
-  onNumberIntersecting(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
+  private onNumberIntersecting(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
     entries.forEach((entry) => {
 
       if (!entry.isIntersecting) return;
