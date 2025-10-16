@@ -8,7 +8,7 @@
 
 > **NumberCounterOptions** = `object`
 
-Defined in: [NumberCounter.ts:3](https://bitbucket.org/numiko/number-counter/src/4afcf29ccd5a9421222002c05c6eef9dd507932d/lib/NumberCounter.ts#lines-3)
+Defined in: [NumberCounter.ts:3](https://bitbucket.org/numiko/number-counter/src/fd3e56087ae51ff815b7ee5197af3c0036829b22/lib/NumberCounter.ts#lines-3)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [NumberCounter.ts:3](https://bitbucket.org/numiko/number-counter/src
 
 > `optional` **duration**: `number`
 
-Defined in: [NumberCounter.ts:6](https://bitbucket.org/numiko/number-counter/src/4afcf29ccd5a9421222002c05c6eef9dd507932d/lib/NumberCounter.ts#lines-6)
+Defined in: [NumberCounter.ts:6](https://bitbucket.org/numiko/number-counter/src/fd3e56087ae51ff815b7ee5197af3c0036829b22/lib/NumberCounter.ts#lines-6)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [NumberCounter.ts:6](https://bitbucket.org/numiko/number-counter/src
 
 > `optional` **intersectionOptions**: `IntersectionObserverInit`
 
-Defined in: [NumberCounter.ts:5](https://bitbucket.org/numiko/number-counter/src/4afcf29ccd5a9421222002c05c6eef9dd507932d/lib/NumberCounter.ts#lines-5)
+Defined in: [NumberCounter.ts:5](https://bitbucket.org/numiko/number-counter/src/fd3e56087ae51ff815b7ee5197af3c0036829b22/lib/NumberCounter.ts#lines-5)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [NumberCounter.ts:5](https://bitbucket.org/numiko/number-counter/src
 
 > `optional` **runOnce**: `boolean`
 
-Defined in: [NumberCounter.ts:4](https://bitbucket.org/numiko/number-counter/src/4afcf29ccd5a9421222002c05c6eef9dd507932d/lib/NumberCounter.ts#lines-4)
+Defined in: [NumberCounter.ts:4](https://bitbucket.org/numiko/number-counter/src/fd3e56087ae51ff815b7ee5197af3c0036829b22/lib/NumberCounter.ts#lines-4)
 
 ***
 
@@ -40,4 +40,4 @@ Defined in: [NumberCounter.ts:4](https://bitbucket.org/numiko/number-counter/src
 
 > `optional` **startValue**: `number`
 
-Defined in: [NumberCounter.ts:7](https://bitbucket.org/numiko/number-counter/src/4afcf29ccd5a9421222002c05c6eef9dd507932d/lib/NumberCounter.ts#lines-7)
+Defined in: [NumberCounter.ts:7](https://bitbucket.org/numiko/number-counter/src/fd3e56087ae51ff815b7ee5197af3c0036829b22/lib/NumberCounter.ts#lines-7)
