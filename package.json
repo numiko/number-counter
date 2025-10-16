@@ -54,8 +54,7 @@
   "npm": {
     "publish": true,
     "publishArgs": [
-      "--access",
-      "public"
+      "--access public"
     ]
   },
   "release-it": {
