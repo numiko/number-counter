@@ -13,11 +13,7 @@ export default [
   // Custom configuration for your files
   {
     files: ['**/*.{js,ts}'],
-    ignores: ['eslint.config.js'],
     languageOptions: {
-      parserOptions: {
-        project: true,
-      },
       globals: {
         ...globals.node,
         ...globals.browser,
@@ -35,6 +31,14 @@ export default [
       '@stylistic/quotes': ['warn', 'single'],
       '@stylistic/indent': ['warn', 2],
       '@stylistic/keyword-spacing': 'warn',
+    }
+  },
+  // We don't need to check for undefined variables in TypeScript files
+  // because TypeScript will catch them.
+  {
+    files: ['**/*.ts'],
+    rules: {
+      'no-undef': 'off',
     }
   }
 ];
