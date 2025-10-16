@@ -3,7 +3,7 @@
   "description": "Number Counter",
   "version": "0.1.0",
   "type": "module",
-  "private": true,
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+ssh://git@bitbucket.org:numiko/number-counter.git"
@@ -50,6 +50,13 @@
   },
   "dependencies": {
     "gsap": "^3.12.5"
+  },
+  "npm": {
+    "publish": true,
+    "publishArgs": [
+      "--access",
+      "public"
+    ]
   },
   "release-it": {
     "$schema": "https://unpkg.com/release-it/schema/release-it.json",
