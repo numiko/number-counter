@@ -51,14 +51,14 @@
   "dependencies": {
     "gsap": "^3.12.5"
   },
-  "npm": {
-    "publish": true,
-    "publishArgs": [
-      "--access public"
-    ]
-  },
   "release-it": {
     "$schema": "https://unpkg.com/release-it/schema/release-it.json",
+    "npm": {
+      "publish": true,
+      "publishArgs": [
+        "--access public"
+      ]
+    },
     "hooks": {
       "before:init": [
         "vitest run"
