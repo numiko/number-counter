@@ -33,8 +33,9 @@ export default [
       '@stylistic/keyword-spacing': 'warn',
     }
   },
-  // We don't need to check for undefined variables in TypeScript files
-  // because TypeScript will catch them.
+  // TypeScript handles undefined variables natively - TypeScript's compiler already
+  // checks for undefined variables and does this more accurately than ESLint
+  // can for TypeScript code.
   {
     files: ['**/*.ts'],
     rules: {
