@@ -13,7 +13,11 @@ export default [
   // Custom configuration for your files
   {
     files: ['**/*.{js,ts}'],
+    ignores: ['eslint.config.js'],
     languageOptions: {
+      parserOptions: {
+        project: true,
+      },
       globals: {
         ...globals.node,
         ...globals.browser,

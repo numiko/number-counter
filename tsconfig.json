@@ -1,5 +1,6 @@
 {
   "include": ["./src/**/*", "./lib/**/*"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "target": "ES2021",
     "lib": ["ES2021", "DOM"],
