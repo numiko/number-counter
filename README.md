@@ -15,4 +15,4 @@ The package can be installed using the semantic version.
 
 ## API
 
-See [documentation](https://bitbucket.org/numiko/number-counter/commits/branch/main/docs/README.md) for more detail on how to use the package.
+See [documentation](https://bitbucket.org/numiko/number-counter/commits/branch/main/) for more detail on how to use the package.
