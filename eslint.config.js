@@ -12,14 +12,12 @@ export default [
   ...tseslint.configs.recommended,
   // Custom configuration for your files
   {
-    files: ['**/*.{js,ts,spec}'],
+    files: ['**/*.{js,ts}'],
     languageOptions: {
       globals: {
         ...globals.node,
         ...globals.browser,
       },
-      // Let `eslint` know about the `tsconfig.json` file so it
-      // can use the correct parser, and types.
     },
     plugins: {
       '@stylistic': stylistic,
