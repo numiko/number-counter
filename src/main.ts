@@ -1,5 +1,5 @@
 import { NumberCounter } from '../lib/NumberCounter';
 
-const numberCounterItems = document.querySelectorAll('[data-js-number-counter]');
+const numberCounterItems = document.querySelectorAll<HTMLElement>('[data-js-number-counter]');
 
 new NumberCounter(numberCounterItems);

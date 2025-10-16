@@ -4,12 +4,15 @@
 import js from '@eslint/js';
 import globals from 'globals';
 import stylistic from '@stylistic/eslint-plugin';
+import tseslint from 'typescript-eslint';
+
 export default [
   // Base recommended config
   js.configs.recommended,
+  ...tseslint.configs.recommended,
   // Custom configuration for your files
   {
-    files: ['**/*.js'],
+    files: ['**/*.{js,ts}'],
     languageOptions: {
       globals: {
         ...globals.node,
