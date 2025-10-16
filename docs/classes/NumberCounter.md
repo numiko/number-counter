@@ -6,7 +6,7 @@
 
 # Class: NumberCounter
 
-Defined in: [NumberCounter.ts:14](https://bitbucket.org/numiko/number-counter/src/4389a133e1672465b970ba7848109e36fe20bdce/lib/NumberCounter.ts#lines-14)
+Defined in: [NumberCounter.ts:14](https://bitbucket.org/numiko/number-counter/src/824553f29fb02b751a68ed27e2239721182c756b/lib/NumberCounter.ts#lines-14)
 
 ## Constructors
 
@@ -14,7 +14,7 @@ Defined in: [NumberCounter.ts:14](https://bitbucket.org/numiko/number-counter/sr
 
 > **new NumberCounter**(`elements`, `options?`): `NumberCounter`
 
-Defined in: [NumberCounter.ts:40](https://bitbucket.org/numiko/number-counter/src/4389a133e1672465b970ba7848109e36fe20bdce/lib/NumberCounter.ts#lines-40)
+Defined in: [NumberCounter.ts:40](https://bitbucket.org/numiko/number-counter/src/824553f29fb02b751a68ed27e2239721182c756b/lib/NumberCounter.ts#lines-40)
 
 #### Parameters
 
@@ -36,7 +36,7 @@ Defined in: [NumberCounter.ts:40](https://bitbucket.org/numiko/number-counter/sr
 
 > **init**(): `void`
 
-Defined in: [NumberCounter.ts:161](https://bitbucket.org/numiko/number-counter/src/4389a133e1672465b970ba7848109e36fe20bdce/lib/NumberCounter.ts#lines-161)
+Defined in: [NumberCounter.ts:161](https://bitbucket.org/numiko/number-counter/src/824553f29fb02b751a68ed27e2239721182c756b/lib/NumberCounter.ts#lines-161)
 
 #### Returns
 
