@@ -9,9 +9,7 @@ A package to animate numbers — most predominantly used on our statistics slice
 
 ## Installation
 
-The package can be installed using the semantic version.
-
-`npm install ssh://git@bitbucket.org:numiko/number-counter.git##semver:<VERSION>`
+`npm i @numiko/number-counter`
 
 ## API
 
