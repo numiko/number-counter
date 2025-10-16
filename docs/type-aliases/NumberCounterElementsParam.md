@@ -8,4 +8,4 @@
 
 > **NumberCounterElementsParam** = `string` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| `NodeListOf`\<[`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)\> \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)[]
 
-Defined in: [NumberCounter.ts:12](https://bitbucket.org/numiko/number-counter/src/a6df7b6feeb5b89152d7bdf2c281b3bbf11ae5db/lib/NumberCounter.ts#lines-12)
+Defined in: [NumberCounter.ts:12](https://bitbucket.org/numiko/number-counter/src/4389a133e1672465b970ba7848109e36fe20bdce/lib/NumberCounter.ts#lines-12)
