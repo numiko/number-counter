@@ -6,9 +6,9 @@
 
 ## Classes
 
-- [NumberCounter](classes/NumberCounter.md)
+- [NumberCounter](https://bitbucket.org/numiko/number-counter/src/main/classes/NumberCounter.md)
 
 ## Type Aliases
 
-- [NumberCounterElementsParam](type-aliases/NumberCounterElementsParam.md)
-- [NumberCounterOptions](type-aliases/NumberCounterOptions.md)
+- [NumberCounterElementsParam](https://bitbucket.org/numiko/number-counter/src/main/type-aliases/NumberCounterElementsParam.md)
+- [NumberCounterOptions](https://bitbucket.org/numiko/number-counter/src/main/type-aliases/NumberCounterOptions.md)

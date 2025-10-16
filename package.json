@@ -1,7 +1,7 @@
 {
   "name": "@numiko/number-counter",
   "description": "Number Counter",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "type": "module",
   "private": false,
   "repository": {
