@@ -16,7 +16,7 @@
     "test:coverage": "vitest --coverage",
     "test:ci": "vitest --run --reporter junit --outputFile ./reports/results.xml --coverage.enabled --coverage.include lib --coverage.reporter=html --coverage.reportsDirectory ./reports/",
     "generate-docs": "typedoc lib/NumberCounter.ts",
-    "deploy-docs": "netlify deploy --prod --dir=docs",
+    "deploy-docs": "netlify deploy --dir=docs --alias=v$(node -p \"require('./package.json').version\")",
     "release": "release-it"
   },
   "main": "./dist/NumberCounter.umd.js",
