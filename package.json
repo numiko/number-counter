@@ -16,6 +16,7 @@
     "test:coverage": "vitest --coverage",
     "test:ci": "vitest --run --reporter junit --outputFile ./reports/results.xml --coverage.enabled --coverage.include lib --coverage.reporter=html --coverage.reportsDirectory ./reports/",
     "generate-docs": "typedoc lib/NumberCounter.ts",
+    "deploy-docs": "netlify deploy --prod --dir=docs",
     "release": "release-it"
   },
   "main": "./dist/NumberCounter.umd.js",
@@ -39,6 +40,7 @@
     "eslint": "^9.13.0",
     "globals": "^15.11.0",
     "happy-dom": "^15.7.4",
+    "netlify-cli": "^23.9.1",
     "release-it": "^17.10.0",
     "typedoc": "^0.28.14",
     "typedoc-plugin-mdn-links": "^5.0.10",
@@ -66,7 +68,8 @@
       ],
       "after:bump": [
         "npm run generate-docs",
-        "npm run build"
+        "npm run build",
+        "npm run deploy-docs"
       ]
     }
   }
