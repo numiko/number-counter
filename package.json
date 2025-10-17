@@ -76,7 +76,6 @@
         "vitest run"
       ],
       "after:bump": [
-        "npm run update-readme-version",
         "npm run generate-docs",
         "npm run build",
         "npm run deploy-docs"
