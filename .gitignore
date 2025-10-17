@@ -27,3 +27,6 @@ coverage/*
 
 # Ignore test reports
 reports/
+
+# Local Netlify folder
+.netlify
