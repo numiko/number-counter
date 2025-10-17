@@ -13,4 +13,4 @@ A package to animate numbers — most predominantly used on our statistics slice
 
 ## API
 
-See [documentation](https://numiko-number-counter.netlify.app/) for more detail on how to use the package.
+See [documentation](https://v0-2-7--numiko-number-counter.netlify.app) for more detail on how to use the package.
