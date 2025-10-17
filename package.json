@@ -57,10 +57,6 @@
     "$schema": "https://unpkg.com/release-it/schema/release-it.json",
     "plugins": {
       "@j-ulrich/release-it-regex-bumper": {
-        "in": {
-          "file": "README.md",
-          "search": "\\d+-\\d+-\\d+"
-        },
         "out": [
           {
             "file": "README.md",
