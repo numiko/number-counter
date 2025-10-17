@@ -16,6 +16,7 @@
     "test:coverage": "vitest --coverage",
     "test:ci": "vitest --run --reporter junit --outputFile ./reports/results.xml --coverage.enabled --coverage.include lib --coverage.reporter=html --coverage.reportsDirectory ./reports/",
     "generate-docs": "typedoc lib/NumberCounter.ts",
+    "update-readme-version": "node scripts/update-readme-version.js",
     "deploy-docs": "netlify deploy --dir=docs --alias=v$(node -p \"require('./package.json').version\")",
     "release": "release-it"
   },
@@ -23,8 +24,7 @@
   "files": [
     "dist",
     "package.json",
-    "README.md",
-    "docs/**/*.md"
+    "README.md"
   ],
   "exports": {
     ".": {
@@ -67,6 +67,7 @@
         "vitest run"
       ],
       "after:bump": [
+        "npm run update-readme-version",
         "npm run generate-docs",
         "npm run build",
         "npm run deploy-docs"
