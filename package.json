@@ -55,6 +55,14 @@
   },
   "release-it": {
     "$schema": "https://unpkg.com/release-it/schema/release-it.json",
+    "plugins": {
+      "@release-it/bumper": {
+        "out": {
+          "file": "README.md",
+          "type": "text/markdown"
+        }
+      }
+    },
     "npm": {
       "publish": true,
       "publishArgs": [
