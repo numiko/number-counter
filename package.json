@@ -34,6 +34,7 @@
     }
   },
   "devDependencies": {
+    "@release-it/bumper": "^7.0.5",
     "@stylistic/eslint-plugin": "^2.9.0",
     "@types/node": "^24.7.2",
     "@vitest/coverage-v8": "^2.1.3",
