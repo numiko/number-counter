@@ -30,7 +30,7 @@ export default defineConfig({
       name: 'NumberCounter',
       fileName: (format) => `NumberCounter.${format}.js`
     },
-    rollupOptions: {
+    rolldownOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: ['gsap'],
