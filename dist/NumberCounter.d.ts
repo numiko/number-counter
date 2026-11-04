@@ -1,4 +1,11 @@
-export declare class NumberCounter {
+type NumberCounterOptions = {
+    runOnce?: boolean;
+    intersectionOptions?: IntersectionObserverInit;
+    duration?: number;
+    startValue?: number;
+};
+type NumberCounterElementsParam = string | HTMLElement | NodeListOf<HTMLElement> | Array<HTMLElement>;
+declare class NumberCounter {
     private integerAndDecimalRegex;
     private prefersReducedMotion;
     private NUMBER_WRAPPER_ATTRIBUTE;
@@ -29,14 +36,4 @@ export declare class NumberCounter {
     private onNumberIntersecting;
     init(): void;
 }
-
-export declare type NumberCounterElementsParam = string | HTMLElement | NodeListOf<HTMLElement> | Array<HTMLElement>;
-
-export declare type NumberCounterOptions = {
-    runOnce?: boolean;
-    intersectionOptions?: IntersectionObserverInit;
-    duration?: number;
-    startValue?: number;
-};
-
-export { }
+export { NumberCounter, type NumberCounterOptions, type NumberCounterElementsParam };
