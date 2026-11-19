@@ -4,10 +4,15 @@ import eslint from 'vite-plugin-eslint';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [eslint(), dts({
-    outDir: 'dist',
-    rollupTypes: true
-  })],
+  plugins: [
+    eslint(),
+    dts({
+      tsconfigPath: './tsconfig.dts.json',
+      entryRoot: 'lib',
+      outDir: 'dist',
+      rollupTypes: true
+    })
+  ],
   server: {
     watch: {
       include: ['src/**', 'lib/**']
@@ -21,11 +26,11 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'lib/NumberCounter.ts'),
+      entry: path.resolve(import.meta.dirname, 'lib/NumberCounter.ts'),
       name: 'NumberCounter',
       fileName: (format) => `NumberCounter.${format}.js`
     },
-    rollupOptions: {
+    rolldownOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: ['gsap'],

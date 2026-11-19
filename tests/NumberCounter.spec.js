@@ -7,7 +7,7 @@ async function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-const IntersectionObserverMock = vi.fn((callback) => {
+const IntersectionObserverMock = vi.fn(function (callback) {
   const unobserve = vi.fn();
 
   // Simulate observing and immediately call the callback with the target element
